@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe Syaira</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Kata sambutan-->
+  <div id="welcome-screen">
+    <h1>Welcome to my game</h1>
+    <h1>Tic Tac Toe 🎀</h1>
+    <button onclick="startGame()">Mulai Permainan</button>
+  </div>
+  
+  <nav>
+    <ul>
+      <li><button id="nav-home" class="active" onclick="showPage('home')">Home</button></li>
+      <li><button id="nav-about" class="active" onclick="showPage('about')">About</button></li>
+      <li><button id="nav-carabermain" onclick="showPage('carabermain')">Cara Bermain</button></li>
+      <li><button id="nav-credit" onclick="showPage('credit')">Credit</button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Halaman Home -->
+    <section id="home" class="active">
+      <div class="board" id="board"></div>
+      <div class="status" id="status"></div>
+      <button class="reset-btn" onclick="resetGame()">Mulai Ulang</button>
+    </section>
+
+    <!-- Halaman About -->
+    <section id="about">
+      <h2>About 🎀</h2>
+      <p>
+        Tic Tac Toe adalah permainan klasik yang selalu seru dimainkan kapan saja!  
+      </p>
+      <p>
+        Cukup dengan 3x3 kotak, kamu bisa asah strategi dan adu cepat berpikir sambil bersenang-senang.  
+      </p>
+      <p>
+        Mainin bersama teman atau sendiri, dijamin gak bakal bosen dan bikin otak makin tajam!  
+      </p>
+      <p>
+        Yuk, tunjukkan gaya mainmu yang paling kece dan raih kemenangan penuh gaya! 🎀😽  
+      </p>
+    </section>
+    
+
+    <!-- Halaman Cara Bermain -->
+    <section id="carabermain">
+      <h2>Cara Bermain 🎀</h2>
+      <p>
+        Tic Tac Toe adalah permainan dua pemain yang dimainkan pada papan 3x3.
+        Pemain bergantian menempatkan tanda (X atau O) pada kotak kosong.
+      </p>
+      <p>
+        Tujuan permainan adalah untuk mendapatkan tiga tanda yang sama secara berurutan,
+        baik secara horizontal, vertikal, atau diagonal.
+      </p>
+      <p>
+        Jika semua kotak terisi dan tidak ada yang berhasil mendapatkan tiga tanda berurutan,
+        maka permainan berakhir seri.
+      </p>
+      <p>
+        Klik <b>Mulai Ulang</b> untuk mengawali permainan baru kapan saja.
+      </p>
+    </section>
+
+    <!-- Halaman Credit -->
+    <section id="credit">
+      <h2>Credit 🎀</h2>
+      <p>Game Tic Tac Toe sederhana ini dibuat oleh:</p>
+      <ul>
+        <li><b>Nama:</b> Syaira Nabila</li>
+        <li><b>Tahun:</b> 2025</li>
+        <li><b>Bahasa Pemrograman:</b> HTML, CSS, JavaScript</li>
+      </ul>
+      <p>Terima kasih sudah mencoba dan bermain game ini! 😊</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Tic Tac Toe by Syaira Nabila
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
