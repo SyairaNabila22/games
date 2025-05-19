@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+/*Kata Sambutan*/
+#welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  color: white;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+}
+
+#welcome-screen button {
+  margin-top: 20px;
+  padding: clamp(10px, 3vw, 12px) clamp(20px, 6vw, 30px);
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  background-color: white;
+  color: #764ba2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#welcome-screen button:hover {
+  background-color: #eee;
+}
+
+/* Navbar */
+nav {
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li button {
+  background: none;
+  border: none;
+  color: #eee;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  padding: clamp(12px, 3vw, 18px) 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li button:hover,
+nav ul li button.active {
+  color: #ffdc00;
+  border-bottom: 3px solid #ffdc00;
+}
+
+/* Container konten */
+main {
+  flex-grow: 1;
+  max-width: 480px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+/* Konten masing-masing halaman */
+section {
+  display: none;
+  padding: 30px 20px 40px;
+}
+
+section.active {
+  display: block;
+}
+
+/* Style Tic Tac Toe board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  grid-gap: 15px;
+  justify-content: center;
+}
+
+.cell {
+  width: 110px;
+  height: 110px;
+  font-size: 4rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  border: 3px solid #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  user-select: none;
+}
+
+.cell:hover:not(:disabled) {
+  background: #8e44ad;
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(142, 68, 173, 0.8);
+}
+
+.cell:disabled {
+  cursor: default;
+  background: rgba(255, 255, 255, 0.3);
+  color: #222;
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.status {
+  margin-top: 25px;
+  font-size: 1.5rem;
+  text-align: center;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  min-height: 38px;
+}
+
+.reset-btn {
+  margin: 30px auto 0;
+  display: block;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  background: #8e44ad;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(142, 68, 173, 0.7);
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+.reset-btn:hover {
+  background: #5e3370;
+}
+
+/* Style halaman Cara Bermain dan Credit */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: justify;
+  margin: 0 20px 15px;
+}
+
+/* Footer kecil */
+footer {
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+  color: #ddd;
+  background: rgba(0,0,0,0.3);
+  user-select: none;
+}
+
+@media (max-width: 500px) {
+  main {
+    margin: 20px 10px 50px;
+  }
+  .board {
+    grid-template-columns: repeat(3, 90px);
+    grid-gap: 12px;
+  }
+  .cell {
+    width: 90px;
+    height: 90px;
+    font-size: 3rem;
+  }
+}
+
+/* container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  text-align: center;
+  padding: 30px 0 10px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+
+/* tambahan media query untuk tombol dan navbar di layar kecil */
+@media (max-width: 400px) {
+  #welcome-screen button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  nav ul li {
+    margin: 0 8px;
+  }
+  nav ul li button {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+}
